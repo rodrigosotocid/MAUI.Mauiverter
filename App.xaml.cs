@@ -8,9 +8,9 @@ namespace MAUI.Mauiverter
         {
             InitializeComponent();
 
-            //MainPage = new MenuView();
+            MainPage = new NavigationPage(new MenuView());
 
-            MainPage = new ConverterView();
+            //MainPage = new ConverterView();
         }
     }
 }

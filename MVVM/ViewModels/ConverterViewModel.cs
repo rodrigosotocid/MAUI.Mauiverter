@@ -17,14 +17,14 @@ namespace MAUI.Mauiverter.MVVM.ViewModels
         public double ToValue { get; set; }
         public ICommand ReturnCommand => new Command(Convert);
 
-        public ConverterViewModel()
+        public ConverterViewModel(string quantityName)
         {
-            QuantityName = "Length";
+            QuantityName = quantityName;
             FromMeasures = LoadMeasures();
             ToMeasures = LoadMeasures();
 
-            CurrentFromMeasure = "Meter";
-            CurrentToMeasure = "Centimeter";
+            CurrentFromMeasure = FromMeasures?.FirstOrDefault() ?? string.Empty;
+            CurrentToMeasure = ToMeasures?.FirstOrDefault() ?? string.Empty;
 
             Convert();
         }
